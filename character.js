@@ -4,9 +4,10 @@ const avatarSelector = document.getElementById("avatarSelector");
 const playerNameEl = document.getElementById("playerName");
 const winsEl = document.getElementById("wins");
 const lossesEl = document.getElementById("losses");
+const usernameEl = document.getElementById("username"); // Для приветствия
 
 // Получаем данные из localStorage или задаем дефолтные
-let playerName = localStorage.getItem("playerName") || "Игрок";
+let playerName = localStorage.getItem("userName") || "Player";
 let avatarSrc =
   localStorage.getItem("avatar") || "https://i.pravatar.cc/150?img=5";
 let wins = parseInt(localStorage.getItem("wins")) || 0;
@@ -17,6 +18,11 @@ playerNameEl.textContent = playerName;
 avatar.src = avatarSrc;
 winsEl.textContent = wins;
 lossesEl.textContent = losses;
+
+// Если есть блок приветствия
+if (usernameEl) {
+  usernameEl.textContent = playerName || "guest";
+}
 
 // Клик по аватару — показываем выбор
 avatar.addEventListener("click", () => {

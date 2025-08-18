@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Not Fight Club!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+
+    <script>
+      const savedName = localStorage.getItem("playerName");
+      if (!savedName) {
+        // Имя ещё не задано — редирект на страницу регистрации
+        window.location.href = "registration.html";
+      }
+    </script>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .fight-container {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .character img {
+        max-width: 150px;
+      }
+
+      .radio-columns {
+        display: flex;
+        gap: 20px;
+      }
+
+      .radio-column {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .divider {
+        width: 2px;
+        background: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="current-menu-title">Fight</div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html" data-title="Main" aria-label="Home">
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="character.html"
+              data-title="Character"
+              aria-label="Character"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="8" r="4" />
+                <path d="M6 20c0-3.31 5.33-5 6-5s6 1.69 6 5v1H6v-1z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" aria-label="Settings" data-title="Settings">
+              <img src="settings.png" alt="Settings" width="24" height="24" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="fight-container">
+        <!-- Левая часть: персонаж игрока -->
+        <div class="character player">
+          <img
+            id="player-img"
+            src="./assets/default.png"
+            alt="Your character"
+          />
+        </div>
+
+        <!-- Центральная часть: задания -->
+        <div class="fight-center">
+          <h1>Please pick 1 Task and 2 Skills</h1>
+          <div class="radio-columns">
+            <div class="radio-column left-column">
+              <label
+                ><span>JS</span><input type="radio" name="left" value="JS"
+              /></label>
+              <label
+                ><span>Git</span><input type="radio" name="left" value="Git"
+              /></label>
+              <label
+                ><span>HTML</span><input type="radio" name="left" value="HTML"
+              /></label>
+              <label
+                ><span>CSS</span><input type="radio" name="left" value="CSS"
+              /></label>
+              <label
+                ><span>localStorage</span
+                ><input type="radio" name="left" value="localStorage"
+              /></label>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="radio-column right-column">
+              <label
+                ><input type="checkbox" name="right" value="Museum-DOM" /><span
+                  >Museum-DOM</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="right" value="CV" /><span
+                  >CV</span
+                ></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="right"
+                  value="Not Fight Club"
+                /><span>Not Fight Club</span></label
+              >
+              <label
+                ><input type="checkbox" name="right" value="Core-js-101" /><span
+                  >Core-js-101</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="right" value="CodeWars" /><span
+                  >CodeWars</span
+                ></label
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Правая часть: противник -->
+        <div class="character enemy">
+          <img src="/assets/mentors-wanted.webp" alt="Enemy" />
+        </div>
+      </div>
+    </main>
+
+    <script src="fight.js"></script>
+    <script src="header.js"></script>
+
+    <script>
+      // Подставляем персонажа из localStorage
+      const savedCharacter = localStorage.getItem("selectedCharacter");
+      if (savedCharacter) {
+        document.getElementById("player-img").src = savedCharacter;
+      }
+    </script>
+  </body>
+</html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Not Fight Club!</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="assets/index_bg.png" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
 
     <script>
       const savedName = localStorage.getItem("playerName");
@@ -17,7 +17,7 @@
   </head>
   <body>
     <header>
-      <div id="current-menu-title"></div>
+      <div id="current-menu-title">Main</div>
       <nav>
         <ul>
           <li>
@@ -50,7 +50,7 @@
             </a>
           </li>
           <li>
-            <a href="settings.html" data-title="Settings" aria-label="Settings">
+            <a href="settings.html" aria-label="Settings" data-title="Settings">
               <img src="settings.png" alt="Settings" width="24" height="24" />
             </a>
           </li>
@@ -59,7 +59,7 @@
     </header>
 
     <main>
-      <a href="fight.html" class="start-button">Fight</a>
+      <a href="fight.html" class="fight-button">Fight</a>
     </main>
     <script src="script.js"></script>
   </body>

@@ -1,12 +1,36 @@
+body {
+  margin: auto;
+  font-family: Arial, sans-serif;
+  background: url("assets/index_bg.png") top center / cover no-repeat;
+  color: #000000;
+  padding: 0;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #4b6cff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px; /* ← вот эта обводка */
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #cc0000;
+}
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  background: #f5f5f5;
+  background: #fdbe23;
   border-bottom: 1px solid #ccc;
   height: 50px;
-  font-family: Arial, sans-serif;
 }
 
 #current-menu-title {
@@ -32,35 +56,181 @@ nav ul li a {
   transition: background-color 0.3s;
 }
 
-nav ul li a svg {
-  display: block;
-}
-
 nav ul li a.active,
 nav ul li a:hover {
   background-color: #ddd;
   color: #000;
 }
+
 main {
-  display: flex; /* Включаем флексбокс */
-  justify-content: center; /* Горизонтальное центрирование */
-  align-items: center; /* Вертикальное центрирование */
-  height: 100vh; /* Высота страницы = высоте окна */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
 }
 
-.fight-button {
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 20px;
+.fight-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.character {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.character img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.character-title {
   font-weight: bold;
-  text-transform: uppercase;
-  background-color: #4b6cff;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: center;
 }
 
-.fight-button:hover {
-  background-color: #cc0000;
+.fight-center {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fight-center h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Подложка за колонками */
+.radio-columns-wrapper {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.radio-columns {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.divider {
+  width: 2px;
+  background-color: #fff;
+  height: 100%;
+}
+
+.radio-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.left-column label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+}
+
+.left-column span {
+  text-align: right;
+  min-width: 100px;
+}
+
+.right-column label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.right-column span {
+  text-align: left;
+}
+
+/* Заголовки колонок */
+.column-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.left-column .column-title {
+  text-align: right;
+}
+
+.right-column .column-title {
+  text-align: left;
+}
+
+/* Центрирование кнопки под колонками */
+.attack-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Кнопки */
+button {
+  margin: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Контейнер для позиционирования подсказки */
+.attack-container {
+  position: relative;
+  display: flex;
+  justify-content: center; /* центрируем кнопку */
+  margin-top: 20px; /* чтобы чуть отступала вниз */
+}
+
+/* Сама подсказка */
+.fight-button[disabled]::after {
+  /* content: "Please pick 1 task and 2 skills"; */
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+/* Показываем при наведении */
+.fight-button[disabled]:hover::after {
+  opacity: 1;
 }

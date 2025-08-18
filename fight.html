@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Not Fight Club!</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+
+    <script>
+      const savedName = localStorage.getItem("playerName");
+      if (!savedName) {
+        window.location.href = "registration.html";
+      }
+    </script>
   </head>
   <body>
     <header>
-      <!-- Слева: название текущей страницы -->
       <div id="current-menu-title">Fight</div>
-
-      <!-- Справа: меню с иконками -->
       <nav>
         <ul>
           <li>
-            <a href="index.html" aria-label="Main" data-title="Main">
-              <!-- Домик -->
+            <a href="index.html" data-title="Main" aria-label="Home">
               <svg
                 width="24"
                 height="24"
@@ -30,10 +34,9 @@
           <li>
             <a
               href="character.html"
-              aria-label="Character"
               data-title="Character"
+              aria-label="Character"
             >
-              <!-- Человечек -->
               <svg
                 width="24"
                 height="24"
@@ -47,16 +50,112 @@
           </li>
           <li>
             <a href="settings.html" aria-label="Settings" data-title="Settings">
-              <!-- PNG иконка шестерёнки -->
               <img src="settings.png" alt="Settings" width="24" height="24" />
             </a>
           </li>
         </ul>
       </nav>
     </header>
+
     <main>
-      <h1>Здесь будет страница Боя</h1>
+      <div class="fight-container">
+        <!-- Левая часть: персонаж игрока -->
+        <div class="character player">
+          <div class="character-title">Your Character</div>
+          <img
+            id="player-img"
+            src="./assets/im-fine.png"
+            alt="Your character"
+          />
+        </div>
+
+        <!-- Центральная часть: задания -->
+        <div class="fight-center">
+          <h1>Please pick</h1>
+
+          <!-- Подложка -->
+          <div class="radio-columns-wrapper">
+            <div class="radio-columns">
+              <div class="radio-column left-column">
+                <div class="column-title">1 Task</div>
+                <label
+                  ><span>JS</span><input type="radio" name="left" value="JS"
+                /></label>
+                <label
+                  ><span>Git</span><input type="radio" name="left" value="Git"
+                /></label>
+                <label
+                  ><span>HTML</span
+                  ><input type="radio" name="left" value="HTML"
+                /></label>
+                <label
+                  ><span>CSS</span><input type="radio" name="left" value="CSS"
+                /></label>
+                <label
+                  ><span>localStorage</span
+                  ><input type="radio" name="left" value="localStorage"
+                /></label>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="radio-column right-column">
+                <div class="column-title">2 Skills</div>
+                <label
+                  ><input
+                    type="checkbox"
+                    name="right"
+                    value="Museum-DOM"
+                  /><span>Museum-DOM</span></label
+                >
+                <label
+                  ><input type="checkbox" name="right" value="CV" /><span
+                    >CV</span
+                  ></label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="right"
+                    value="Not Fight Club"
+                  /><span>Not Fight Club</span></label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="right"
+                    value="Core-js-101"
+                  /><span>Core-js-101</span></label
+                >
+                <label
+                  ><input type="checkbox" name="right" value="CodeWars" /><span
+                    >CodeWars</span
+                  ></label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="attack-container">
+            <button
+              class="fight-button"
+              disabled
+              title="Please pick 1 task and 2 skills"
+            >
+              Attack!
+            </button>
+          </div>
+        </div>
+
+        <!-- Правая часть: противник -->
+        <div class="character enemy">
+          <div class="character-title">Enemy</div>
+          <img src="./assets/mentors-wanted.webp" alt="Enemy" />
+        </div>
+      </div>
     </main>
-    <script src="script.js"></script>
+
+    <script src="fight.js"></script>
+    <script src="header.js"></script>
   </body>
 </html>
