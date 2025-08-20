@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <title>Registration</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 50px;
-      }
       input {
         padding: 5px;
         font-size: 16px;
@@ -20,14 +15,16 @@
       }
     </style>
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="registrationScreen">
-      <h2>Create Your Character</h2>
-      <input type="text" id="playerNameInput" placeholder="Character Name" />
-      <button id="startButton">Create Character</button>
+    <div class="bodyreg">
+      <div id="registrationScreen">
+        <h2>Create Your Character</h2>
+        <input type="text" id="playerNameInput" placeholder="Character Name" />
+        <button id="startButton">Create Character</button>
+      </div>
     </div>
-
     <script src="registration.js"></script>
   </body>
 </html>
