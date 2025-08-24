@@ -2,13 +2,13 @@ const nameInput = document.getElementById("name-input");
 const saveBtn = document.getElementById("save-btn");
 const currentName = document.getElementById("current-name");
 
-// Load name from localStorage on page load
+//  name from localStorage
 const storedName = localStorage.getItem("userName");
 if (storedName) {
   currentName.textContent = storedName;
 }
 
-// Save new name
+//  new name
 saveBtn.addEventListener("click", () => {
   const newName = nameInput.value.trim();
   if (newName) {

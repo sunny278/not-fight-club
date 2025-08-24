@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
-  const currentPage = path.split("/").pop(); // например: index.html
-
+  const currentPage = path.split("/").pop();
   const links = document.querySelectorAll("header nav a");
   let activeLink = null;
 

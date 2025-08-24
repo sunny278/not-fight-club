@@ -1,187 +1,4 @@
-/* REGISTRATION PAGE */
-
-/* REGISTRATION INPUT & BUTTON */
-
-#playerNameInput {
-  padding: 12px 20px;
-  font-size: 18px;
-  border: 2px solid #4b6cff;
-  border-radius: 12px;
-  outline: none;
-  transition: all 0.3s ease;
-  width: 250px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-#playerNameInput:focus {
-  border-color: #ff4b4b;
-  box-shadow: 0 6px 20px rgba(255, 75, 75, 0.3);
-  transform: scale(1.05);
-}
-
-#startButton {
-  padding: 12px 30px;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #4b6cff, #6bffea);
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-left: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-#startButton:hover {
-  background: linear-gradient(135deg, #ff4b4b, #ffb74b);
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-#startButton:active {
-  transform: translateY(0) scale(1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-.bodyreg {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: url("assets/index_bg.png") center / cover no-repeat;
-}
-
-#registrationScreen {
-  background: rgba(255, 255, 255, 0.85);
-  padding: 50px 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-#registrationScreen h2 {
-  margin-bottom: 30px;
-  font-size: 28px;
-  color: #333;
-}
-/* SETTINGS PAGE */
-
-.bodyset {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: url("assets/index_bg.png") center / cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  color: #333;
-}
-#settingsScreen {
-  background: rgba(255, 255, 255, 0.85);
-  padding: 50px 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-#settingsScreen h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-/* Контейнер для горизонтальной линии элементов */
-.settings-row {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap; /* для адаптивности на маленьких экранах */
-  margin-top: 20px;
-}
-
-/* Прежнее имя */
-.current-name-box {
-  background: #f0f4ff;
-  padding: 15px 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 5px 0 0;
-}
-
-.current-name-box span {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 8px;
-}
-
-.current-name-box #current-name {
-  font-size: 22px;
-  font-weight: 900;
-  color: #222;
-}
-/* Input */
-#name-input {
-  padding: 12px 20px;
-  font-size: 18px;
-  border: 2px solid #4b6cff;
-  border-radius: 12px;
-  outline: none;
-  transition: all 0.3s ease;
-  width: 250px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-#name-input:focus {
-  border-color: #ff4b4b;
-  box-shadow: 0 6px 20px rgba(255, 75, 75, 0.3);
-  transform: scale(1.05);
-}
-
-/* Button */
-#save-btn {
-  padding: 12px 30px;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #4b6cff, #6bffea);
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-#save-btn:hover {
-  background: linear-gradient(135deg, #ff4b4b, #ffb74b);
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-#save-btn:active {
-  transform: translateY(0) scale(1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* BASIC */
+/* === BASIC === */
 body {
   margin: auto;
   font-family: Arial, sans-serif;
@@ -190,23 +7,7 @@ body {
   padding: 0;
 }
 
-.start-button {
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: #4b6cff;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px; /* ← вот эта обводка */
-  transition: background-color 0.3s ease;
-}
-
-.start-button:hover {
-  background-color: #cc0000;
-}
-
+/* === HEADER === */
 header {
   display: flex;
   justify-content: space-between;
@@ -246,6 +47,99 @@ nav ul li a:hover {
   color: #000;
 }
 
+/* === PROFILE PAGE === */
+.body-profile {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("assets/index_bg.png") center / cover no-repeat;
+}
+
+.profile-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.character-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Градиентное имя персонажа */
+.character-name {
+  background: linear-gradient(135deg, #4b6cff, #6bffea);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 8px 15px;
+  border-radius: 12px;
+  margin: 8px 0 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.avatar-main {
+  width: 200px;
+  height: 200px;
+  border-radius: 16px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.avatar-main:hover {
+  transform: scale(1.05);
+}
+
+/* === AVATAR SELECTOR === */
+.avatar-selector {
+  display: none;
+  margin-bottom: 20px;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.avatar-selector.show {
+  display: flex;
+}
+
+.avatar-selector img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.avatar-selector img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* === STATS BOX === */
+.stats-box {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* === FIGHT PAGE === */
 main {
   display: flex;
   justify-content: center;
@@ -277,11 +171,26 @@ main {
 
 .character-title {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 18px;
   text-align: center;
+  color: #000;
 }
 
+/* Имя персонажа в бою */
+.fight-character-name {
+  margin: 5px 0 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #030000;
+  background: linear-gradient(135deg, #4b6cff, #6bffea);
+  padding: 6px 12px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* fight center */
 .fight-center {
   flex: 2;
   display: flex;
@@ -294,25 +203,13 @@ main {
   text-align: center;
 }
 
-/* Подложка за колонками */
+/* Колонки выбора атак */
 .radio-columns-wrapper {
   background: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   animation: fadeInUp 0.6s ease forwards;
-}
-
-/* Анимация появления */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .radio-columns {
@@ -357,7 +254,6 @@ main {
   text-align: left;
 }
 
-/* Заголовки колонок */
 .column-title {
   font-weight: bold;
   margin-bottom: 10px;
@@ -372,33 +268,16 @@ main {
   text-align: left;
 }
 
-/* Центрирование кнопки под колонками */
+/* Атака кнопка */
 .attack-container {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 20px;
-}
-
-/* Кнопки */
-button {
-  margin: 5px;
-  padding: 5px 10px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* Контейнер для позиционирования подсказки */
-.attack-container {
   position: relative;
-  display: flex;
-  justify-content: center; /* центрируем кнопку */
-  margin-top: 20px; /* чтобы чуть отступала вниз */
 }
 
-/* Сама подсказка */
 .fight-button[disabled]::after {
-  /* content: "Please pick 1 task and 2 skills"; */
   position: absolute;
   bottom: -35px;
   left: 50%;
@@ -414,7 +293,187 @@ button {
   transition: opacity 0.2s ease;
 }
 
-/* Показываем при наведении */
 .fight-button[disabled]:hover::after {
   opacity: 1;
+}
+
+/* === REGISTRATION PAGE === */
+.bodyreg {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("assets/index_bg.png") center / cover no-repeat;
+}
+
+#registrationScreen {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+#registrationScreen h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+}
+
+#playerNameInput {
+  padding: 12px 20px;
+  font-size: 18px;
+  border: 2px solid #4b6cff;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 250px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#playerNameInput:focus {
+  border-color: #ff4b4b;
+  box-shadow: 0 6px 20px rgba(255, 75, 75, 0.3);
+  transform: scale(1.05);
+}
+
+#startButton {
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4b6cff, #6bffea);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#startButton:hover {
+  background: linear-gradient(135deg, #ff4b4b, #ffb74b);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#startButton:active {
+  transform: translateY(0) scale(1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* === SETTINGS PAGE === */
+.bodyset {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("assets/index_bg.png") center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+#settingsScreen {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+#settingsScreen h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.current-name-box {
+  background: #f0f4ff;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5px 0 0;
+}
+
+.current-name-box span {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.current-name-box #current-name {
+  font-size: 22px;
+  font-weight: 900;
+  color: #222;
+}
+
+#name-input {
+  padding: 12px 20px;
+  font-size: 18px;
+  border: 2px solid #4b6cff;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 250px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#name-input:focus {
+  border-color: #ff4b4b;
+  box-shadow: 0 6px 20px rgba(255, 75, 75, 0.3);
+  transform: scale(1.05);
+}
+
+#save-btn {
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4b6cff, #6bffea);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#save-btn:hover {
+  background: linear-gradient(135deg, #ff4b4b, #ffb74b);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#save-btn:active {
+  transform: translateY(0) scale(1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

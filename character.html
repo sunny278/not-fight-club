@@ -3,62 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Not Fight Club!</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
   </head>
 
-  <header>
-    <div id="current-menu-title"></div>
-    <nav>
-      <ul>
-        <li>
-          <a href="index.html" data-title="Main" aria-label="Home">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a
-            href="character.html"
-            data-title="Character"
-            aria-label="Character"
-          >
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="8" r="4" />
-              <path d="M6 20c0-3.31 5.33-5 6-5s6 1.69 6 5v1H6v-1z" />
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="settings.html" data-title="Settings" aria-label="Settings">
-            <img src="settings.png" alt="Settings" width="24" height="24" />
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <body class="body-profile">
+    <header>
+      <div id="current-menu-title">Profile</div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html" data-title="Main" aria-label="Home">
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="character.html"
+              data-title="Character"
+              aria-label="Character"
+              class="active"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="8" r="4" />
+                <path d="M6 20c0-3.31 5.33-5 6-5s6 1.69 6 5v1H6v-1z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" data-title="Settings" aria-label="Settings">
+              <img src="settings.png" alt="Settings" width="24" height="24" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-  <body>
-    <h1>Profile</h1>
+    <main class="profile-container">
+      <!-- Блок с именем -->
+      <div class="player-info">
+        <div class="character-title">Your Character</div>
+        <div id="playerNameBox" class="fight-character-name"></div>
+      </div>
 
-    <!--Avatar -->
-    <img id="avatar" src="" alt="Avatar" />
+      <!-- Аватар -->
+      <img
+        id="avatar"
+        src="./assets/im-fine.png"
+        alt="Avatar"
+        class="avatar-main"
+      />
 
-    <!-- Выбор аватара -->
-    <div id="avatarSelector">
-      <img src="https://i.pravatar.cc/100?img=1" alt="Аватар 1" />
-      <img src="https://i.pravatar.cc/100?img=2" alt="Аватар 2" />
-      <img src="https://i.pravatar.cc/100?img=3" alt="Аватар 3" />
-    </div>
+      <!-- Выбор аватара -->
+      <div id="avatarSelector" class="avatar-selector">
+        <img src="./assets/im-fine.png" alt="im-fine" />
+        <img src="./assets/lazy.png" alt="lazy" />
+        <img src="./assets/rs-school.webp" alt="rs-school" />
+        <img src="./assets/v-kavaliou.webp" alt="v-kavaliou" />
+      </div>
 
-    <!-- Имя и статистика -->
-    <div id="stats">
-      <p>Name: <span id="playerName"></span></p>
-      <p>Wins: <span id="wins">0</span></p>
-      <p>Loses: <span id="losses">0</span></p>
-    </div>
+      <!-- Статистика -->
+      <div id="stats" class="stats-box">
+        <p>Wins: <span id="wins">0</span></p>
+        <p>Loses: <span id="losses">0</span></p>
+      </div>
+    </main>
+
     <script src="character.js"></script>
     <script src="header.js"></script>
   </body>

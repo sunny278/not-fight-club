@@ -1,19 +1,26 @@
-// --- Установка картинки игрока ---
+// ---для  картинки и имени игрока ---
 const playerImgEl = document.getElementById("player-img");
+const playerNameEl = document.getElementById("player-name");
 
-// Берём путь к выбранному персонажу из localStorage
+//  путь к выбранному персонажу и имя из localStorage
 const savedCharacter =
   localStorage.getItem("selectedCharacter") ||
   localStorage.getItem("playerImage");
+const savedCharacterName = localStorage.getItem("userName");
 
-// Если есть выбранный персонаж, подставляем его
 if (savedCharacter) {
   playerImgEl.src = savedCharacter;
-  playerImgEl.alt = "Your character";
+  playerImgEl.alt = savedCharacterName || "Your character";
 } else {
-  // Если персонаж не выбран, ставим дефолтную картинку
   playerImgEl.src = "./assets/im-fine.png";
   playerImgEl.alt = "Default character";
+}
+
+// Выводим имя
+if (savedCharacterName) {
+  playerNameEl.textContent = savedCharacterName;
+} else {
+  playerNameEl.textContent = "Unnamed hero";
 }
 
 // --- Логика выбора навыков (максимум 2) ---
@@ -32,7 +39,8 @@ rightCheckboxes.forEach((checkbox) => {
     }
   });
 });
-// --- Управление доступностью кнопки Attack ---
+
+// ---  доступность Attack ---
 const fightButton = document.querySelector(".fight-button");
 const leftRadios = document.querySelectorAll(
   '.left-column input[type="radio"]'
@@ -48,12 +56,14 @@ function validateSelection() {
 
   if (leftChecked === 1 && rightChecked === 2) {
     fightButton.disabled = false;
+    fightButton.removeAttribute("title");
   } else {
     fightButton.disabled = true;
+    fightButton.setAttribute("title", "Please pick 1 task and 2 skills");
   }
 }
 
-// Вешаем слушатели
+// Слушатели на изменения
 leftRadios.forEach((radio) =>
   radio.addEventListener("change", validateSelection)
 );
@@ -61,22 +71,5 @@ rightCheckboxes.forEach((cb) =>
   cb.addEventListener("change", validateSelection)
 );
 
-// Проверим при загрузке
+// Проверю при загрузке
 validateSelection();
-
-function validateSelection() {
-  const leftChecked = document.querySelectorAll(
-    '.left-column input[type="radio"]:checked'
-  ).length;
-  const rightChecked = document.querySelectorAll(
-    '.right-column input[type="checkbox"]:checked'
-  ).length;
-
-  if (leftChecked === 1 && rightChecked === 2) {
-    fightButton.disabled = false;
-    fightButton.removeAttribute("title"); // убираем title
-  } else {
-    fightButton.disabled = true;
-    fightButton.setAttribute("title", "Please pick 1 task and 2 skills");
-  }
-}
